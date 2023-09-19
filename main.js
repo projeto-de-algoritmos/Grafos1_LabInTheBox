@@ -14,3 +14,8 @@ function paintLine(x1, y1, x2, y2) {
   ctx.lineTo(x2, y2);
   ctx.stroke();
 }
+
+// definição do tamanho da célula, linhas e colunas
+let c = 50; // tamanho de cada célula
+let rows = canvas.width / c;
+let columns = canvas.height / c;
