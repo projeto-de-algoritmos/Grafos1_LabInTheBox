@@ -32,6 +32,20 @@ class Cell {
       { x: x * c, y: y * c + c },
       { x: x * c, y: y * c },
     ];
+    this.walls = [true, true, true, true]; // top, right, bottom, left
+  }
+
+  // renderizando tabuleiro
+  render() {
+    for (let i = 0; i < 4; i++) {
+      if (this.walls[i])
+        paintLine(
+          this.ang[i].x,
+          this.ang[i].y,
+          this.ang[i + 1].x,
+          this.ang[i + 1].y
+        );
+    }
   }
 }
 
@@ -50,3 +64,5 @@ function lab() {
     cells[i].render();
   }
 }
+
+setInterval(lab, 300);
