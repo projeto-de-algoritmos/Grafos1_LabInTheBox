@@ -20,6 +20,13 @@ let c = 50; // tamanho de cada célula
 let rows = canvas.width / c;
 let columns = canvas.height / c;
 
+function index(x, y) {
+  if (x < 0 || y < 0 || x > columns - 1 || y > rows - 1) {
+    return -1;
+  }
+  return x * rows + y;
+}
+
 class Cell {
   constructor(x, y) {
     this.x = x;
@@ -32,7 +39,39 @@ class Cell {
       { x: x * c, y: y * c + c },
       { x: x * c, y: y * c },
     ];
+    this.visited = false;
     this.walls = [true, true, true, true]; // top, right, bottom, left
+  }
+
+  check() {
+    let x = this.x;
+    let y = this.y;
+
+    let t = cells[index(x, y - 1)];
+    let r = cells[index(x + 1, y)];
+    let b = cells[index(x, y + 1)];
+    let l = cells[index(x - 1, y)];
+
+    let neighbors = [];
+
+    if (t && !t.visited) {
+      neighbors.push(t);
+    }
+    if (r && !r.visited) {
+      neighbors.push(r);
+    }
+    if (b && !b.visited) {
+      neighbors.push(b);
+    }
+    if (l && !l.visited) {
+      neighbors.push(l);
+    }
+    if (neighbors.length > 0) {
+      let rd = Math.floor(Math.random() * neighbors.length);
+      return neighbors[rd];
+    } else {
+      return undefined;
+    }
   }
 
   // renderizando tabuleiro
@@ -46,6 +85,34 @@ class Cell {
           this.ang[i + 1].y
         );
     }
+    if (this.visited) {
+      ctx.fillStyle = "rgba(255, 255, 0, 0.5)";
+      ctx.fillRect(this.x * c, this.y * c, c, c);
+    }
+  }
+
+  light() {
+    ctx.fillStyle = "rgba(255, 0, 0, 0.5)";
+    ctx.fillRect(this.x * c, this.y * c, c, c);
+  }
+}
+
+function remove(currentCell, chosenCell) {
+  let lr = currentCell.x - chosenCell.x;
+  if (lr === -1) {
+    currentCell.walls[1] = false;
+    chosenCell.walls[3] = false;
+  } else if (lr === 1) {
+    currentCell.walls[3] = false;
+    chosenCell.walls[1] = false;
+  }
+  let lb = currentCell.y - chosenCell.y;
+  if (lb === -1) {
+    currentCell.walls[2] = false;
+    chosenCell.walls[0] = false;
+  } else if (lb === 1) {
+    currentCell.walls[0] = false;
+    chosenCell.walls[2] = false;
   }
 }
 
@@ -58,11 +125,29 @@ for (let i = 0; i < columns; i++) {
   }
 }
 
+let current = cells[0];
+let stack = []; // pilha
+current.visited = true;
+stack.push(current);
+
 // função que faz a criação do campo onde será feito o labirinto
 function lab() {
   for (let i = 0; i < cells.length; i++) {
     cells[i].render();
   }
+
+  current.visited = true;
+  current.light();
+
+  let newCurrent = current.check();
+  if (newCurrent) {
+    newCurrent.visited = true;
+    stack.push(current);
+    remove(current, newCurrent);
+    current = newCurrent;
+  } else if (stack.length > 0) {
+    current = stack.pop();
+  }
 }
 
-setInterval(lab, 300);
+setInterval(lab, 100);
