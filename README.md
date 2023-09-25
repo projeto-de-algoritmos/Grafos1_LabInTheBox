@@ -25,7 +25,7 @@
 
 **Linguagem**:JavaScript<br>
 
-### Usando no ambiente de desenvolvimento local
+## Como Rodar
 
 Clonar o repositório do projeto:
 
@@ -35,3 +35,7 @@ git clone https://github.com/projeto-de-algoritmos/Grafos1_LabInTheBox.git
 ```
 
 Após clonar o repositório localmente, abrir o arquivo index.html no navegador.
+
+## Apresentação
+
+![Lab In The Box - Grafos 1](https://youtu.be/M6bSY2qyiRU)
