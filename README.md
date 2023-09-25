@@ -38,4 +38,4 @@ Após clonar o repositório localmente, abrir o arquivo index.html no navegador.
 
 ## Apresentação
 
-![Lab In The Box - Grafos 1](https://youtu.be/M6bSY2qyiRU)
+[Lab In The Box - Grafos 1](https://youtu.be/M6bSY2qyiRU)
