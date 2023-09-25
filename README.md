@@ -1,30 +1,37 @@
 # Lab In The Box
 
 ## Gerador de labirinto
-**Número da Lista**: X<br>
+
 **Conteúdo da Disciplina**: Grafos 1<br>
 
 ## Alunos
-|Matrícula | Aluno |
-| :--: | :--: |
-| 190025581 |  [Bruno Oliveira Lima](https://github.com/eng-Bruno)     |
-| --------- | ----  |
 
+| Matrícula |                        Aluno                        |
+| :-------: | :-------------------------------------------------: |
+| 190025581 | [Bruno Oliveira Lima](https://github.com/eng-Bruno) |
+| --------- |                        ----                         |
 
-## Sobre 
- 
-
+## Sobre
 
 ## Screenshots
-Adicione 3 ou mais screenshots do projeto em funcionamento.
 
-## Instalação 
+![LabInTheBox](assets/LabInTheBox.png)
+
+![LabInTheBox2](assets/LabInTheBox2.png)
+
+![LabInTheBox3](assets/LabInTheBox3.png)
+
+## Instalação
+
 **Linguagem**:JavaScript<br>
-**Framework**: (caso exista)<br>
-Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
 
-## Uso 
-Explique como usar seu projeto caso haja algum passo a passo após o comando de execução.
+### Usando no ambiente de desenvolvimento local
 
-## Outros 
-Quaisquer outras informações sobre seu projeto podem ser descritas abaixo.
+Clonar o repositório do projeto:
+
+```
+git clone https://github.com/projeto-de-algoritmos/Grafos1_LabInTheBox.git
+
+```
+
+Após clonar o repositório localmente, abrir o arquivo index.html no navegador.

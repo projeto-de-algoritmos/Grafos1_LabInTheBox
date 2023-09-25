@@ -86,13 +86,13 @@ class Cell {
         );
     }
     if (this.visited) {
-      ctx.fillStyle = "rgba(253,253,255, 0.5)";
+      ctx.fillStyle = "rgba(248, 248, 255, 0.5)";
       ctx.fillRect(this.x * c, this.y * c, c, c);
     }
   }
 
   light() {
-    ctx.fillStyle = "rgba(72, 61, 139, 0.5)";
+    ctx.fillStyle = "rgba(40, 40, 40, 0.8)";
     ctx.fillRect(this.x * c, this.y * c, c, c);
   }
 }
