@@ -27,6 +27,10 @@
 
 ## Como Rodar
 
+Acessar pelo link: https://projeto-de-algoritmos.github.io/Grafos1_LabInTheBox/
+
+ou
+
 Clonar o repositório do projeto:
 
 ```
