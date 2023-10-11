@@ -13,6 +13,8 @@
 
 ## Sobre
 
+Gerador de labirinto utilizando Busca em Profundidade (DFS).
+
 ## Screenshots
 
 ![LabInTheBox](assets/LabInTheBox.png)
@@ -42,4 +44,4 @@ Após clonar o repositório localmente, abrir o arquivo index.html no navegador.
 
 ## Apresentação
 
-[Lab In The Box - Grafos 1](https://youtu.be/M6bSY2qyiRU)
+[Lab In The Box - Grafos 1](./apresentação/Lab%20In%20The%20Box%20-%20Grafos%201.zip) - presente no repositório
